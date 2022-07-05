@@ -5,24 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingBottom="16dp"
     android:paddingLeft="16dp"
-    android:paddingRight="16dp"
     android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
     tools:context="com.zybooks.pizzaparty.MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Number of people?"
+        android:textAlignment="viewStart"
         android:textSize="24sp" />
 
     <EditText
+        android:id="@+id/attendEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
         android:ems="5"
-        android:id="@+id/attendEditText" />
+        android:inputType="number" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -32,35 +33,38 @@
         android:textSize="24sp" />
 
     <RadioGroup
+        android:id="@+id/hungryRadioGroup"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/hungryRadioGroup">
+        android:orientation="horizontal">
+
         <RadioButton
-            android:text="Light"
+            android:id="@+id/lightRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/lightRadioButton" />
+            android:text="Light" />
+
         <RadioButton
-            android:text="Medium"
+            android:id="@+id/mediumRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:id="@+id/mediumRadioButton" />
+            android:text="Medium" />
+
         <RadioButton
-            android:text="Ravenous"
+            android:id="@+id/ravenousRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/ravenousRadioButton" />
+            android:text="Ravenous" />
     </RadioGroup>
 
     <TextView
         android:id="@+id/answerTextView"
-        android:text="Total pizzas: ?"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:textSize="24sp"/>
+        android:text="Total pizzas: ?"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/calcButton"
@@ -69,4 +73,9 @@
         android:layout_marginTop="20dp"
         android:onClick="calculateClick"
         android:text="Calculate" />
+
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

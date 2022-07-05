@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         }
         catch (NumberFormatException ex) {
             numAttend = 0;
-            String error = getString(R.string.error);
+            String error = getString(R.string.enter_text);
             mNumAttendEditText.setText(error);
         }
 
@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
         String totalText = getString(R.string.total_pizzas, totalPizzas);
         String nTotPizz = getString(R.string.new_total_pizzas, totalPizzas);
         mNumPizzasTextView.setText(totalText);
-        mNumPizzasTextView.setText(nTotPizz);
 
     }
 }
