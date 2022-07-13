@@ -3,16 +3,72 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/loginTextView"
+        android:textSize="30sp"
+        android:text="Module 3: Introduction"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/textGreeting"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:text="First Name:"
+        android:id="@+id/textGreeting"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/loginTextView"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <EditText
+        android:id="@+id/nameText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="15dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/textGreeting"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textGreeting" />
+
+    <Button
+        android:text="Submit"
+        android:backgroundTint="@color/green"
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="15dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textGreeting" />
+
+    <Button
+        android:text="Cancel"
+        android:backgroundTint="@color/red"
+        android:id="@+id/cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="15dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/submit" />
+
+    <Button
+        android:text="Say Hello!"
+        style="@style/CoolButton"
+        android:id="@+id/buttonSayHello"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="15dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cancel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
