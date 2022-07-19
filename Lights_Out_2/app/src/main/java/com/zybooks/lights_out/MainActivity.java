@@ -122,4 +122,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     // TODO: Add method to respond to New Game button click
+    public void onNewGameClick(View view) {
+        startGame();
+    }
+
 }
