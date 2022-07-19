@@ -1,9 +1,5 @@
-package com.zybooks.lightsout;
+package com.zybooks.lights_out;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
     private Button[][] mButtons;
     private int mOnColor;
     private int mOffColor;
-    private static final String GAME_STATE = "gameState";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,21 +36,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         mGame = new LightsOutGame();
-        if (savedInstanceState == null){
-            startGame();
-        }
-        else{
-            String gameState = savedInstanceState.getString(GAME_STATE);
-            mGame.restoreState(gameState);
-            setButtonColors();
-        }
-
-    }
-
-    @Override
-    protected void onSaveInstanceState(@NonNull Bundle outState){
-        super.onSaveInstanceState(outState);
-        outState.putString(GAME_STATE, mGame.getState());
+        startGame();
     }
 
     private void startGame() {

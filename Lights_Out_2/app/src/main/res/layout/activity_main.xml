@@ -55,27 +55,6 @@
         android:onClick="onNewGameClick"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/light_grid"
-
-
-        />
-
-    <Button
-        android:id="@+id/button_help"
-        style="@style/GameOptionButton"
-        android:text="@string/help_button"
-        android:onClick="onHelpClicked"
-        app:layout_constraintLeft_toLeftOf="@id/new_game_button"
-        app:layout_constraintRight_toRightOf="@id/new_game_button"
-        app:layout_constraintTop_toBottomOf="@id/new_game_button" />
-
-    <Button
-        android:id="@+id/button_change_color"
-        style="@style/GameOptionButton"
-        android:text="@string/color_button"
-        android:onClick="onChangeColorClicked"
-        app:layout_constraintLeft_toLeftOf="@id/new_game_button"
-        app:layout_constraintRight_toRightOf="@id/new_game_button"
-        app:layout_constraintTop_toBottomOf="@id/button_help" />
+        app:layout_constraintTop_toBottomOf="@id/light_grid" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
