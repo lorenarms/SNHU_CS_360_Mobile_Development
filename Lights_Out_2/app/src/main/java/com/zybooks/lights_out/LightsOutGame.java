@@ -52,4 +52,26 @@ public class LightsOutGame {
         }
         return true;
     }
+
+    public String getState() {
+        StringBuilder boardString = new StringBuilder();
+        for (int row = 0; row < NUM_ROWS; row++) {
+            for (int col = 0; col < NUM_COLS; col++) {
+                char value = mLights[row][col] ? 'T' : 'F';
+                boardString.append(value);
+            }
+        }
+
+        return boardString.toString();
+    }
+
+    public void restoreState(String gameState) {
+        int index = 0;
+        for (int row = 0; row < NUM_ROWS; row++) {
+            for (int col = 0; col < NUM_COLS; col++) {
+                mLights[row][col] = gameState.charAt(index) == 'T';
+                index++;
+            }
+        }
+    }
 }
