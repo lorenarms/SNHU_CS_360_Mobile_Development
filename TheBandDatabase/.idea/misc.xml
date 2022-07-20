@@ -3,11 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/TheBandDatabase/app/src/main/res/layout/activity_details.xml" value="0.13425925925925927" />
-        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/TheBandDatabase/app/src/main/res/layout/activity_list.xml" value="0.13425925925925927" />
-        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/TheBandDatabase/app/src/main/res/layout/fragment_details.xml" value="0.13425925925925927" />
-        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/TheBandDatabase/app/src/main/res/layout/fragment_list.xml" value="0.13425925925925927" />
-        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/TheBandDatabase/app/src/main/res/layout/styles.xml" value="0.23020833333333332" />
+        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/TheBandDatabase/app/src/main/res/layout/activity_details.xml" value="0.24230072463768115" />
+        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/TheBandDatabase/app/src/main/res/layout/activity_list.xml" value="0.24230072463768115" />
+        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/TheBandDatabase/app/src/main/res/layout/activity_main.xml" value="0.4296875" />
+        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/TheBandDatabase/app/src/main/res/layout/fragment_details.xml" value="0.24230072463768115" />
+        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/TheBandDatabase/app/src/main/res/layout/fragment_list.xml" value="0.24230072463768115" />
       </map>
     </option>
   </component>
