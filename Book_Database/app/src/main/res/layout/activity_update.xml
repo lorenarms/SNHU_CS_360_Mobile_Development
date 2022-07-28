@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddActivity"
+
     android:padding="30sp">
 
 
     <EditText
-        android:id="@+id/name_input"
+        android:id="@+id/name_input_update"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/pos_input"
+        android:id="@+id/pos_input_update"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -32,10 +32,10 @@
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_input" />
+        app:layout_constraintTop_toBottomOf="@+id/name_input_update" />
 
     <EditText
-        android:id="@+id/phone_input"
+        android:id="@+id/phone_input_update"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -45,19 +45,19 @@
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pos_input" />
+        app:layout_constraintTop_toBottomOf="@+id/pos_input_update" />
 
     <Button
-        android:id="@+id/add_new"
+        android:id="@+id/add_new_update"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginTop="40dp"
-        android:backgroundTint="#03A9F4"
-        android:text="Add"
+        android:backgroundTint="#4CAF50"
+        android:text="Update"
         android:textAllCaps="false"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phone_input" />
+        app:layout_constraintTop_toBottomOf="@+id/phone_input_update" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

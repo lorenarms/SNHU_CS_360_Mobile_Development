@@ -1,8 +1,11 @@
 package com.zybooks.book_database;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -20,7 +23,7 @@ public class MyDatabase extends SQLiteOpenHelper {
 
 
 
-    public MyDatabase(@Nullable Context context) {
+    MyDatabase(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.context = context;
     }
@@ -41,5 +44,54 @@ public class MyDatabase extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
+    }
+
+    void addEmployee(String name, String pos, String phone){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(COLUMN_NAME, name);
+        cv.put(COLUMN_POSITION, pos);
+        cv.put(COLUMN_PHONE, phone);
+        long result = db.insert(TABLE_NAME, null, cv);
+        if (result == -1)
+            Toast.makeText(context, "Failed to add", Toast.LENGTH_SHORT).show();
+        else{
+            Toast.makeText(context, "Successfully added", Toast.LENGTH_SHORT).show();
+
+
+        }
+
+
+    }
+
+    Cursor readAllData(){
+        String query = "SELECT * FROM " + TABLE_NAME;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.rawQuery(query, null);
+
+        }
+        return cursor;
+    }
+
+    void updateData(String row_id, String name, String position, String phone){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COLUMN_NAME, name);
+        cv.put(COLUMN_POSITION, position);
+        cv.put(COLUMN_PHONE, phone);
+
+        long result = db.update(TABLE_NAME, cv, "_id=?", new String[]{row_id});
+
+        if (result == -1){
+            Toast.makeText(context, "Update failed", Toast.LENGTH_SHORT).show();
+
+        }else{
+            Toast.makeText(context, "Update success", Toast.LENGTH_SHORT).show();
+
+        }
     }
 }
