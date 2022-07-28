@@ -5,30 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    android:backgroundTint="@color/black"
+    android:background="@color/black"
 
-    <EditText
-        android:id="@+id/username_one"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Username"
-        android:layout_marginTop="50dp"/>
+    >
 
-    <EditText
-        android:id="@+id/password_one"
-        android:inputType="textPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:layout_marginTop="50dp"
-        android:layout_below="@id/username_one"/>
-
-    <Button
-        android:id="@+id/sign_in_button_one"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Log in"
-        android:layout_marginTop="50dp"
-        android:layout_below="@id/password_one"/>
 
 </RelativeLayout>
