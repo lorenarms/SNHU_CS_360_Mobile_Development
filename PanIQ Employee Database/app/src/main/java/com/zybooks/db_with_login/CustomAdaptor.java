@@ -2,14 +2,17 @@ package com.zybooks.db_with_login;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -19,6 +22,8 @@ public class CustomAdaptor extends RecyclerView.Adapter<CustomAdaptor.MyViewHold
     private Context context;
     Activity activity;
     private ArrayList employee_id, employee_name, employee_position, employee_phone;
+
+    Button delete;
 
     int position;
 
@@ -41,6 +46,7 @@ public class CustomAdaptor extends RecyclerView.Adapter<CustomAdaptor.MyViewHold
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
+
         View view = inflater.inflate(R.layout.my_row, parent, false);
         return new MyViewHolder(view);
     }
@@ -52,6 +58,7 @@ public class CustomAdaptor extends RecyclerView.Adapter<CustomAdaptor.MyViewHold
         holder.employee_name.setText(String.valueOf(employee_name.get(position)));
         holder.employee_position.setText(String.valueOf(employee_position.get(position)));
         holder.employee_phone.setText(String.valueOf(employee_phone.get(position)));
+
         holder.mainLayout.setOnClickListener((view) -> {
             Intent intent = new Intent(context, UpdateActivity.class);
             intent.putExtra("id", String.valueOf(employee_id.get(position)));
@@ -60,6 +67,13 @@ public class CustomAdaptor extends RecyclerView.Adapter<CustomAdaptor.MyViewHold
             intent.putExtra("phone", String.valueOf(employee_phone.get(position)));
             activity.startActivityForResult(intent, 1);
         });
+        holder.itemView.findViewById(R.id.delete_button).setOnClickListener((view -> {
+            Intent intent = new Intent(context, DeleteActivity.class);
+            intent.putExtra("id", String.valueOf(employee_id.get(position)));
+            intent.putExtra("name", String.valueOf(employee_name.get(position)));
+            activity.startActivityForResult(intent, 1);
+        }));
+
     }
 
     @Override
@@ -68,6 +82,7 @@ public class CustomAdaptor extends RecyclerView.Adapter<CustomAdaptor.MyViewHold
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
+
 
         TextView employee_id, employee_name, employee_position, employee_phone;
         LinearLayout mainLayout;
@@ -83,4 +98,5 @@ public class CustomAdaptor extends RecyclerView.Adapter<CustomAdaptor.MyViewHold
 
         }
     }
+
 }

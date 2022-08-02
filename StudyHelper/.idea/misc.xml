@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/StudyHelper/app/src/main/res/layout/activity_question.xml" value="0.13703703703703704" />
+        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/StudyHelper/app/src/main/res/layout/activity_question_edit.xml" value="0.207193515704154" />
+        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/StudyHelper/app/src/main/res/layout/activity_subject.xml" value="0.1" />
+        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/StudyHelper/app/src/main/res/layout/recycler_view_items.xml" value="0.13703703703703704" />
+        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/StudyHelper/app/src/main/res/menu/context_menu.xml" value="0.29074074074074074" />
+        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/StudyHelper/app/src/main/res/menu/question_menu.xml" value="0.13703703703703704" />
+        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/StudyHelper/app/src/main/res/menu/subject_menu.xml" value="0.29074074074074074" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

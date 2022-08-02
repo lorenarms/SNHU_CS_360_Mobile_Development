@@ -89,4 +89,18 @@
         android:layout_below="@id/sign_in_button_one"
         />
 
+    <Button
+        android:id="@+id/request_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="18dp"
+        android:textSize="10dp"
+        android:backgroundTint="@color/black"
+        android:text="Request Permissions"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_centerHorizontal="true"
+
+        />
+
 </RelativeLayout>

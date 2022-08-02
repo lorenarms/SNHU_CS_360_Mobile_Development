@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -21,6 +22,7 @@ public class HomeActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     FloatingActionButton add_button;
+
     CustomAdaptor customAdaptor;
 
     MyDatabase myDB;
@@ -33,13 +35,16 @@ public class HomeActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerview);
         add_button = findViewById(R.id.add_new);
+
         add_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 Intent intent = new Intent(HomeActivity.this, AddActivity.class);
                 startActivityForResult(intent, REQUEST_CODE);
+
             }
         });
+
 
         myDB = new MyDatabase(HomeActivity.this);
         employee_id = new ArrayList<>();
@@ -52,6 +57,7 @@ public class HomeActivity extends AppCompatActivity {
                 employee_position, employee_phone);
         recyclerView.setAdapter(customAdaptor);
         recyclerView.setLayoutManager(new LinearLayoutManager(HomeActivity.this));
+
 
     }
 
@@ -79,5 +85,8 @@ public class HomeActivity extends AppCompatActivity {
 
             }
         }
+    }
+    void delete(){
+
     }
 }

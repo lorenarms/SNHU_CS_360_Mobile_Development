@@ -1,7 +1,10 @@
 package com.zybooks.book_database;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,7 +14,7 @@ import android.widget.Toast;
 public class UpdateActivity extends AppCompatActivity {
 
     EditText employee_name, employee_position, employee_phone;
-    Button update_button;
+    Button update_button, delete_button;
 
     String id, name, position, phone;
 
@@ -29,6 +32,9 @@ public class UpdateActivity extends AppCompatActivity {
 
         getAndSetIntentData();
 
+        //set action bar title
+
+
         update_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,6 +49,34 @@ public class UpdateActivity extends AppCompatActivity {
             }
         });
 
+        delete_button.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                confirmDialogue();
+            }
+        });
+
+    }
+
+    void confirmDialogue(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Delete " + name + "?");
+        builder.setMessage("Are you sure you want to delete " + name + "?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                MyDatabase myDB = new MyDatabase(UpdateActivity.this);
+                myDB.deleteOneRow(id);
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        builder.create().show();
     }
 
     void getAndSetIntentData(){
