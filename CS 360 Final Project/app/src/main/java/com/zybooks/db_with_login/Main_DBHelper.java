@@ -20,6 +20,7 @@ public class Main_DBHelper extends SQLiteOpenHelper {
     private static final String COLUMN_TITLE = "title";
     private static final String COLUMN_DESCRIPTION = "description";
     private static final String COLUMN_DATE = "date";
+    private static final String COLUMN_TIME = "time";
 
 
 
@@ -36,7 +37,8 @@ public class Main_DBHelper extends SQLiteOpenHelper {
                         " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         COLUMN_TITLE + " TEXT, " +
                         COLUMN_DESCRIPTION + " TEXT, " +
-                        COLUMN_DATE + " TEXT);";
+                        COLUMN_DATE + " TEXT, " +
+                        COLUMN_TIME + " TEXT);";
         db.execSQL(query);
     }
 
@@ -46,13 +48,14 @@ public class Main_DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    void addEmployee(String name, String pos, String phone){
+    void addReminder(String title, String description, String date, String time){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
-        cv.put(COLUMN_TITLE, name);
-        cv.put(COLUMN_DESCRIPTION, pos);
-        cv.put(COLUMN_DATE, phone);
+        cv.put(COLUMN_TITLE, title);
+        cv.put(COLUMN_DESCRIPTION, description);
+        cv.put(COLUMN_DATE, date);
+        cv.put(COLUMN_TIME, time);
         long result = db.insert(TABLE_NAME, null, cv);
         if (result == -1)
             Toast.makeText(context, "Failed to add", Toast.LENGTH_SHORT).show();
@@ -77,12 +80,13 @@ public class Main_DBHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    void updateData(String row_id, String name, String position, String phone){
+    void updateData(String row_id, String title, String description, String date, String time){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
-        cv.put(COLUMN_TITLE, name);
-        cv.put(COLUMN_DESCRIPTION, position);
-        cv.put(COLUMN_DATE, phone);
+        cv.put(COLUMN_TITLE, title);
+        cv.put(COLUMN_DESCRIPTION, description);
+        cv.put(COLUMN_DATE, date);
+        cv.put(COLUMN_TIME, time);
 
         long result = db.update(TABLE_NAME, cv, "_id=?", new String[]{row_id});
 

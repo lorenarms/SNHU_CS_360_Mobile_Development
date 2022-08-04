@@ -1,5 +1,7 @@
 package com.zybooks.db_with_login;
 
+import static com.zybooks.db_with_login.R.id.date_to_fire;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -13,13 +15,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.BreakIterator;
 import java.util.ArrayList;
 
 public class CustomAdaptor extends RecyclerView.Adapter<CustomAdaptor.MyViewHolder>{
 
     private Context context;
     Activity activity;
-    private ArrayList event_id, event_title, event_description, event_date;
+    private ArrayList event_id, event_title, event_description, event_date, event_time;
 
     Button delete;
 
@@ -29,13 +32,15 @@ public class CustomAdaptor extends RecyclerView.Adapter<CustomAdaptor.MyViewHold
                   ArrayList event_id,
                   ArrayList event_title,
                   ArrayList event_description,
-                  ArrayList event_date){
+                  ArrayList event_date,
+                  ArrayList event_time){
         this.activity = activity;
         this.context = context;
         this.event_id = event_id;
         this.event_title = event_title;
         this.event_description = event_description;
         this.event_date = event_date;
+        this.event_time = event_time;
 
     }
 
@@ -56,6 +61,7 @@ public class CustomAdaptor extends RecyclerView.Adapter<CustomAdaptor.MyViewHold
         holder.event_title.setText(String.valueOf(event_title.get(position)));
         holder.event_description.setText(String.valueOf(event_description.get(position)));
         holder.event_date.setText(String.valueOf(event_date.get(position)));
+        holder.event_time.setText(String.valueOf(event_time.get(position)));
 
         holder.mainLayout.setOnClickListener((view) -> {
             //Intent intent = new Intent(context, UpdateActivity.class);
@@ -71,6 +77,7 @@ public class CustomAdaptor extends RecyclerView.Adapter<CustomAdaptor.MyViewHold
             intent.putExtra("title", String.valueOf(event_title.get(position)));
             intent.putExtra("description", String.valueOf(event_description.get(position)));
             intent.putExtra("date", String.valueOf(event_date.get(position)));
+            intent.putExtra("time", String.valueOf(event_time.get(position)));
             activity.startActivityForResult(intent, 1);
         }));
 
@@ -84,7 +91,8 @@ public class CustomAdaptor extends RecyclerView.Adapter<CustomAdaptor.MyViewHold
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
 
-        TextView event_id, event_title, event_description, event_date;
+
+        TextView event_id, event_title, event_description, event_date, event_time;
         LinearLayout mainLayout;
 
 
@@ -93,7 +101,8 @@ public class CustomAdaptor extends RecyclerView.Adapter<CustomAdaptor.MyViewHold
             event_id = itemView.findViewById(R.id.event_id);
             event_title = itemView.findViewById(R.id.event_title);
             event_description = itemView.findViewById(R.id.event_description);
-            event_date = itemView.findViewById(R.id.date_to_fire);
+            event_date = itemView.findViewById(date_to_fire);
+            event_time = itemView.findViewById(R.id.time_to_fire);
             mainLayout = itemView.findViewById((R.id.mainLayout));
 
         }

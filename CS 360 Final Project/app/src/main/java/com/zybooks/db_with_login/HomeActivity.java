@@ -25,7 +25,7 @@ public class HomeActivity extends AppCompatActivity {
     CustomAdaptor customAdaptor;
 
     Main_DBHelper myDB;
-    ArrayList<String> event_id, event_title, event_description, event_date;
+    ArrayList<String> event_id, event_title, event_description, event_date, event_time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,10 +50,11 @@ public class HomeActivity extends AppCompatActivity {
         event_title = new ArrayList<>();
         event_description = new ArrayList<>();
         event_date = new ArrayList<>();
+        event_time = new ArrayList<>();
 
         storeDataInArrays();
         customAdaptor = new CustomAdaptor(HomeActivity.this, this, event_id, event_title,
-                event_description, event_date);
+                event_description, event_date, event_time);
         recyclerView.setAdapter(customAdaptor);
         recyclerView.setLayoutManager(new LinearLayoutManager(HomeActivity.this));
 
@@ -80,6 +81,7 @@ public class HomeActivity extends AppCompatActivity {
                 event_title.add(cursor.getString(1));
                 event_description.add(cursor.getString(2));
                 event_date.add(cursor.getString(3));
+                event_time.add(cursor.getString(4));
 
 
             }

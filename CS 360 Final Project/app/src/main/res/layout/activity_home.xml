@@ -4,8 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/black"
-    android:background="@color/black"
     tools:context=".HomeActivity">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -23,7 +21,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:rippleColor="@color/white"
         app:tint="@color/white"
-        app:srcCompat="@drawable/ic_add" />
+        app:srcCompat="@drawable/ic_add"
+        android:contentDescription="@string/floating_action_button" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"

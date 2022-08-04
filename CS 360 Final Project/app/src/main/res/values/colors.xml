@@ -4,5 +4,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="gold">#f2bb6b</color>
+
+    <color name="gold">#EDAE49</color>
+    <color name="rose">#D1495B</color>
+    <color name="ocean">#00798C</color>
+    <color name="sky">#30638E</color>
+    <color name="storm">#003D5B</color>
+
 </resources>

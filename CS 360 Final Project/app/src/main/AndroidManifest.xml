@@ -29,14 +29,14 @@
         <activity
             android:name=".RegisterActivity"
             android:exported="false"
-            android:theme="@style/Theme.Black"
+            android:theme="@style/Theme.Full"
             android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.Black"
+            android:theme="@style/Theme.Full"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

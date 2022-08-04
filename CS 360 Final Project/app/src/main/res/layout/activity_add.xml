@@ -34,18 +34,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_input" />
 
-    <EditText
-        android:id="@+id/date_input"
+    <LinearLayout
+        android:id="@+id/date_and_time_buttons"
+        app:layout_constraintTop_toBottomOf="@id/description_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="Date"
-        android:inputType="date"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description_input" />
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/btnDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:drawableLeft="@drawable/ic_cal"
+            android:layout_weight="0.5"
+            android:text="date" />
+
+        <Button
+            android:id="@+id/btnTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:drawableLeft="@drawable/ic_alarm"
+            android:layout_weight="0.5"
+            android:text="time" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/add_new"
@@ -61,7 +78,7 @@
         android:layout_marginBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date_input" />
+        app:layout_constraintTop_toBottomOf="@+id/date_and_time_buttons" />
 
 
 
