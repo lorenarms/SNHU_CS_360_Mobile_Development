@@ -17,6 +17,8 @@
         android:hint="Title"
         android:inputType="text"
         android:minHeight="48dp"
+        android:background="@drawable/shape_style_rounded"
+        android:paddingLeft="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,6 +31,8 @@
         android:ems="10"
         android:hint="Description"
         android:inputType="textMultiLine"
+        android:background="@drawable/shape_style_rounded"
+        android:paddingLeft="5dp"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -4,13 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/drawable/alaram.xml" value="0.3675" />
+        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/drawable/shape_style_affirm.xml" value="0.265" />
+        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/drawable/shape_style_rounded.xml" value="0.1565" />
         <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/layout/activity_add.xml" value="0.2821557971014493" />
         <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/layout/activity_home.xml" value="0.4296875" />
         <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/layout/activity_main.xml" value="0.4296875" />
         <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/layout/activity_notification_message.xml" value="0.4296875" />
         <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/layout/activity_register.xml" value="0.4296875" />
         <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/layout/activity_update.xml" value="0.2821557971014493" />
-        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/layout/event_table_row.xml" value="0.45" />
+        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/layout/event_table_row.xml" value="0.4288840262582057" />
         <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/layout/my_row.xml" value="0.4296875" />
         <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/layout/notification_layout.xml" value="0.1" />
         <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/PanIQ Employee Database/app/src/main/res/layout/activity_add.xml" value="0.415625" />

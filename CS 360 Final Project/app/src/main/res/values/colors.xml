@@ -10,5 +10,7 @@
     <color name="ocean">#00798C</color>
     <color name="sky">#30638E</color>
     <color name="storm">#003D5B</color>
+    <color name="green_confirm">#3BA63F</color>
+    <color name="red_deny">#970E0E</color>
 
 </resources>
