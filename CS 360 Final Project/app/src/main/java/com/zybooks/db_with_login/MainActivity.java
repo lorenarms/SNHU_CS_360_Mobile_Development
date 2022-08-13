@@ -1,20 +1,21 @@
 //
 //  Lawrence Artl III
 //  CS 360 22EW6
-//  Project Two
-//  July 29, 2022
+//  Final Project
+//  August 14, 2022
 //
 //  This application requests a user log-in or register a
 //  username and password. It will also request permission
 //  to read a user's SMS messages. It then displays a list
-//  of employees which the user can add to with the add button,
-//  edit by clicking on a user, or delete a user by clicking
-//  on the trashcan icon for the user.
+//  of events which the user can add to with the add button,
+//  edit by clicking on an event, or delete an event by clicking
+//  on the pencil icon for the event.
+//
+//  Events are stored in a database, and events are fired as
+//  notifications at the set date and time the user specifies
 //
 //  Log in information is stored in a database, and employees
 //  are stored in a separate database.
-
-
 
 
 package com.zybooks.db_with_login;
@@ -26,6 +27,8 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -55,20 +58,23 @@ public class MainActivity extends AppCompatActivity {
         request_button = (Button) findViewById(R.id.request_button);
         DB = new Login_DBHelper(this);
 
-        requestSmsPermission();
+        createNotificationChannel();    // create the channel to handle notifications in the app
 
+        // Log in
         sign_in_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String user = username.getText().toString();
                 String pass = password.getText().toString();
 
+                // check that fields have data
                 if(user.equals("") || pass.equals("")){
                     Toast.makeText(MainActivity.this, "Please check all fields", Toast.LENGTH_SHORT).show();
                 }
+                // check if the user and password exist and match in the database
                 else{
-                    Boolean checkuserpass = DB.checkUsernamePassword(user, pass);
-                    if(checkuserpass == true){
+                    Boolean checkUserPass = DB.checkUsernamePassword(user, pass);
+                    if(checkUserPass == true){
                         Toast.makeText(MainActivity.this, "Sign in successful", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                         startActivity(intent);
@@ -82,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // allow user to register and store login info in database
         register_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -90,60 +97,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        request_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (ContextCompat.checkSelfPermission(MainActivity.this,
-                        Manifest.permission.READ_SMS) == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(MainActivity.this, "You have already granted this permission", Toast.LENGTH_SHORT).show();
-
-                } else {
-                    requestSmsPermission();
-                }
-
-            }
-        });
-
-
     }
 
-    private void requestSmsPermission(){
-        if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_SMS)){
+    private void createNotificationChannel(){
+        CharSequence name = "ReminderChannel";
+        String description = "Channel for Reminder";
+        int importance = NotificationManager.IMPORTANCE_DEFAULT;
+        NotificationChannel channel = new NotificationChannel("notifyText", name, importance);
+        channel.setDescription(description);
 
-            new AlertDialog.Builder(this)
-                    .setTitle("Permission needed")
-                    .setMessage("This permission is needed in order to enhance user experience.")
-                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            ActivityCompat.requestPermissions(MainActivity.this, new String[] {Manifest.permission.READ_SMS}, SMS_PERMISSION_CODE);
-                        }
-                    })
-                    .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            dialogInterface.dismiss();
-                        }
-                    })
-                    .create().show();
-
-
-        }else{
-            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.READ_SMS}, SMS_PERMISSION_CODE);
-        }
+        NotificationManager notificationManager = getSystemService(NotificationManager.class);
+        notificationManager.createNotificationChannel(channel);
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == SMS_PERMISSION_CODE) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this, "Permission granted", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show();
-
-            }
-
-        }
-    }
 }

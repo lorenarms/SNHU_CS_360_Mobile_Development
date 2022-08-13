@@ -1,13 +1,18 @@
 package com.zybooks.db_with_login;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.DatePickerDialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.TimePickerDialog;
-import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -15,6 +20,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -24,45 +30,104 @@ import java.util.Date;
 
 public class UpdateActivity extends AppCompatActivity {
 
-    EditText event_title, event_description;
+    EditText title_input, description_input;
     Button update_button, delete_button, time_button, date_button;
     String alarm_generator;
 
     String id, title, description, date, time;
+
+    int notificationCounter;    // used for setting id when creating alarm
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update);
 
-        event_title = findViewById(R.id.title_input_update);
-        event_description = findViewById(R.id.description_input_update);
-        time_button = findViewById(R.id.btn_Date_Update);
-        date_button = findViewById(R.id.btn_Time_Update);
+        // ID's for buttons and text input
+        title_input = findViewById(R.id.title_input_update);
+        description_input = findViewById(R.id.description_input_update);
+        date_button = findViewById(R.id.btn_Date_Update);
+        time_button = findViewById(R.id.btn_Time_Update);
         update_button = findViewById(R.id.add_new_update);
         delete_button = findViewById(R.id.edit_button);
 
+        // Get data necessary to fill in text inputs / buttons for editing
         getAndSetIntentData();
 
-        time_button.setOnClickListener(view -> {
-            selectTime();
-        });
+        // TEXT WATCHERS to disable 'UPDATE' button
+        title_input.addTextChangedListener(textWatcher);
+        description_input.addTextChangedListener(textWatcher);
+        time_button.addTextChangedListener(textWatcher);
+        date_button.addTextChangedListener(textWatcher);
 
+        // INPUT DATE and TIME
+        time_button.setOnClickListener(view -> {selectTime();});
         date_button.setOnClickListener(view -> selectDate());
 
+        // BUTTON to update event (enabled unless fields are empty)
         update_button.setOnClickListener(view -> {
 
             Main_DBHelper myDB = new Main_DBHelper(UpdateActivity.this);
-            myDB.updateData(id, event_title.getText().toString().trim(),
-                    event_description.getText().toString().trim(),
+            myDB.updateData(id, title_input.getText().toString().trim(),
+                    description_input.getText().toString().trim(),
                     date_button.getText().toString().trim(),
                     time_button.getText().toString().trim());
+
+            // set alarm here
+            // if permission has not been granted, don't set an alarm
+            if (ContextCompat.checkSelfPermission(UpdateActivity.this,
+                    Manifest.permission.READ_SMS) == PackageManager.PERMISSION_GRANTED){
+                try {
+                    setAlarm(title_input.getText().toString().trim(),
+                            description_input.getText().toString().trim(),
+                            date_button.getText().toString().trim(),
+                            time_button.getText().toString().trim());
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            } else{
+                Toast.makeText(UpdateActivity.this, "You must grant permission to use this feature",
+                        Toast.LENGTH_SHORT).show();
+            }
+
             finish();
 
         });
         delete_button.setOnClickListener(view -> confirmDialog());
 
     }
+
+    // TEXT WATCHER to check that all text has been entered
+    // Disable 'UPDATE' button if false
+    private final TextWatcher textWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            String title = title_input.getText().toString().trim();
+            String description = description_input.getText().toString().trim();
+            String date = date_button.getText().toString().trim();
+            String time = time_button.getText().toString().trim();
+
+            update_button.setEnabled(!title.isEmpty() && !description.isEmpty() &&
+                    !date.isEmpty() && !time.isEmpty());
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable) {
+
+        }
+    };
+
+    //****************************************
+    //
+    // Setting data for text and buttons
+    //
+    //****************************************
 
     void getAndSetIntentData(){
         if(getIntent().hasExtra("id") && getIntent().hasExtra("title") &&
@@ -71,15 +136,16 @@ public class UpdateActivity extends AppCompatActivity {
 
             // getting data from intent
             id = getIntent().getStringExtra("id");
+            int i = Integer.parseInt(id);
+            notificationCounter = (int)i;
             title = getIntent().getStringExtra("title");
             description = getIntent().getStringExtra("description");
             date = getIntent().getStringExtra("date");
             time = getIntent().getStringExtra("time");
 
-
             // setting intent data
-            event_title.setText(title);
-            event_description.setText(description);
+            title_input.setText(title);
+            description_input.setText(description);
             date_button.setText(date);
             time_button.setText(time);
 
@@ -87,6 +153,12 @@ public class UpdateActivity extends AppCompatActivity {
             Toast.makeText(this, "No data to update", Toast.LENGTH_SHORT).show();
         }
     }
+
+    //****************************************
+    //
+    // DELETING the event
+    //
+    //****************************************
 
     void confirmDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -103,6 +175,13 @@ public class UpdateActivity extends AppCompatActivity {
         builder.create().show();
 
     }
+
+
+    //****************************************
+    //
+    // Setting date and time methods
+    //
+    //****************************************
 
     private void selectTime() {
         Calendar calendar = Calendar.getInstance();
@@ -135,7 +214,6 @@ public class UpdateActivity extends AppCompatActivity {
             minutes_reformatted = "" + minute;
         }
 
-
         if (hour == 0) {
             time = "12" + ":" + minutes_reformatted + " AM";
         } else if (hour < 12) {
@@ -146,38 +224,48 @@ public class UpdateActivity extends AppCompatActivity {
             int temp = hour - 12;
             time = temp + ":" + minutes_reformatted + " PM";
         }
-
-
         return time;
     }
 
-    @SuppressLint({"UnspecifiedImmutableFlag", "SimpleDateFormat"})
-    private void setAlarm(String text, String date, String time) {
-        AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+    //****************************************
+    //
+    // Setting the alarm and notifications
+    //
+    //****************************************
 
-        Intent intent = new Intent(getApplicationContext(), AlarmBrodcast.class);
+    private void setAlarm(String text, String description, String date, String time) throws ParseException {
+
+        Intent intent = new Intent(UpdateActivity.this,
+                AlarmBroadcast.class);
         intent.putExtra("event", text);
+        intent.putExtra("description", description);
         intent.putExtra("time", date);
         intent.putExtra("date", time);
 
-        PendingIntent pendingIntent;
-        pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_ONE_SHOT);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(UpdateActivity.this,
+                notificationCounter,
+                intent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
+
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
         String dateAndTime = date + " " + alarm_generator;
-        DateFormat formatter;
-        formatter = new SimpleDateFormat("d-M-yyyy hh:mm");
-        try {
-            Date date1 = formatter.parse(dateAndTime);
-            assert date1 != null;
-            am.set(AlarmManager.RTC_WAKEUP, date1.getTime(), pendingIntent);
-            Toast.makeText(getApplicationContext(), "Alarm", Toast.LENGTH_SHORT).show();
+        DateFormat formatter = new SimpleDateFormat("d-M-yyyy hh:mm");
+
+        Date dateToSet = null;
+
+        try{
+            dateToSet = formatter.parse(dateAndTime);
+            assert dateToSet != null;   // check that date is not null
+
+            alarmManager.set(AlarmManager.RTC_WAKEUP,
+                   dateToSet.getTime(),
+                   pendingIntent);
+            Toast.makeText(getApplicationContext(), "Alarm set!", Toast.LENGTH_SHORT).show();
 
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
-        Intent intentBack = new Intent(getApplicationContext(), MainActivity.class);
-        intentBack.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intentBack);
 
     }
 

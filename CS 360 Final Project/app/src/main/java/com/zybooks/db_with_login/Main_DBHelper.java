@@ -9,6 +9,12 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+//****************************************
+//
+// Main db for events in App
+//
+//****************************************
+
 public class Main_DBHelper extends SQLiteOpenHelper {
 
     private Context context;
@@ -29,6 +35,7 @@ public class Main_DBHelper extends SQLiteOpenHelper {
         this.context = context;
     }
 
+    // build a database
     @Override
     public void onCreate(SQLiteDatabase db) {
 
@@ -48,26 +55,7 @@ public class Main_DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    void addReminder(String title, String description, String date, String time){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues cv = new ContentValues();
-
-        cv.put(COLUMN_TITLE, title);
-        cv.put(COLUMN_DESCRIPTION, description);
-        cv.put(COLUMN_DATE, date);
-        cv.put(COLUMN_TIME, time);
-        long result = db.insert(TABLE_NAME, null, cv);
-        if (result == -1)
-            Toast.makeText(context, "Failed to add", Toast.LENGTH_SHORT).show();
-        else{
-            Toast.makeText(context, "Event added", Toast.LENGTH_SHORT).show();
-
-
-        }
-
-
-    }
-
+    // method to return all events to recycler view in home screen
     Cursor readAllData(){
         String query = "SELECT * FROM " + TABLE_NAME;
         SQLiteDatabase db = this.getReadableDatabase();
@@ -80,6 +68,28 @@ public class Main_DBHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    // add an event to database
+    long addReminder(String title, String description, String date, String time){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(COLUMN_TITLE, title);
+        cv.put(COLUMN_DESCRIPTION, description);
+        cv.put(COLUMN_DATE, date);
+        cv.put(COLUMN_TIME, time);
+        long result = db.insert(TABLE_NAME, null, cv);
+        if (result == -1){
+            Toast.makeText(context, "Failed to add", Toast.LENGTH_SHORT).show();
+            return result;
+        }
+        else {
+            Toast.makeText(context, "Event added", Toast.LENGTH_SHORT).show();
+            return result;
+
+        }
+    }
+
+    // update the event in the database
     void updateData(String row_id, String title, String description, String date, String time){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -99,6 +109,8 @@ public class Main_DBHelper extends SQLiteOpenHelper {
         }
     }
 
+
+    // delete a row / event if exists in the database
     void deleteOneRow(String row_id){
         SQLiteDatabase db = this.getWritableDatabase();
         long result = db.delete(TABLE_NAME, "_id=?", new String[]{row_id});

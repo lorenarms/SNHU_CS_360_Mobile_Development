@@ -8,6 +8,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+//****************************************
+//
+// HELPER for db of users and passwords
+//
+//****************************************
+
 public class Login_DBHelper extends SQLiteOpenHelper {
 
     public static final String DBNAME = "Login.db";
@@ -27,6 +33,8 @@ public class Login_DBHelper extends SQLiteOpenHelper {
         MyDB.execSQL("drop Table if exists users");
     }
 
+
+    // add new user and password
     public Boolean insertData(String username, String password){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -37,10 +45,9 @@ public class Login_DBHelper extends SQLiteOpenHelper {
         else
             return true;
 
-
-
     }
 
+    // check if username exists already
     public Boolean checkUsername(String username){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         //check the db for user; if username exists return true
@@ -51,6 +58,7 @@ public class Login_DBHelper extends SQLiteOpenHelper {
             return false;
     }
 
+    // check if password and username are paired correctly
     public Boolean checkUsernamePassword(String username, String password){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("Select * from users where username = ? and password = ?", new String[] {username, password});

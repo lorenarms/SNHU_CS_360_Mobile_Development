@@ -9,6 +9,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+//**************************************
+//
+//  REGISTER a user to the app
+//
+//**************************************
+
 public class RegisterActivity extends AppCompatActivity {
 
     EditText username, password, repassword;
@@ -29,6 +35,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         DB = new Login_DBHelper(this);
 
+        // let user sign up based on username and password entered
         signup.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -69,6 +76,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+        // Go back to log in screen
         signin.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){

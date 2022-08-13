@@ -24,10 +24,6 @@ public class CustomAdaptor extends RecyclerView.Adapter<CustomAdaptor.MyViewHold
     Activity activity;
     private ArrayList event_id, event_title, event_description, event_date, event_time;
 
-    Button delete;
-
-    int position;
-
     CustomAdaptor(Activity activity, Context context,
                   ArrayList event_id,
                   ArrayList event_title,
@@ -44,12 +40,18 @@ public class CustomAdaptor extends RecyclerView.Adapter<CustomAdaptor.MyViewHold
 
     }
 
+    //****************************************
+    //
+    // Methods to fill the row on the home screen
+    // access the db and fill the home screen
+    // with data
+    //
+    //****************************************
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-
         View view = inflater.inflate(R.layout.event_table_row, parent, false);
         return new MyViewHolder(view);
     }
@@ -63,6 +65,8 @@ public class CustomAdaptor extends RecyclerView.Adapter<CustomAdaptor.MyViewHold
         holder.event_date.setText(String.valueOf(event_date.get(position)));
         holder.event_time.setText(String.valueOf(event_time.get(position)));
 
+
+        // enable this line of code to allow user to click on whole row
         holder.mainLayout.setOnClickListener((view) -> {
             //Intent intent = new Intent(context, UpdateActivity.class);
             //intent.putExtra("id", String.valueOf(employee_id.get(position)));
@@ -90,11 +94,8 @@ public class CustomAdaptor extends RecyclerView.Adapter<CustomAdaptor.MyViewHold
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-
-
         TextView event_id, event_title, event_description, event_date, event_time;
         LinearLayout mainLayout;
-
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);

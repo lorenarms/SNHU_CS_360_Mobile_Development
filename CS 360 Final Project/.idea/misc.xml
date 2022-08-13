@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/drawable/alaram.xml" value="0.3675" />
+        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/drawable/ic_add.xml" value="0.1" />
+        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/drawable/ic_alarm.xml" value="0.1" />
+        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/drawable/ic_cal.xml" value="0.1" />
+        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/drawable/ic_event.xml" value="0.179" />
+        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/drawable/shape_style_affirm.xml" value="0.265" />
         <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/drawable/shape_style_rounded.xml" value="0.1565" />
         <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/layout/activity_add.xml" value="0.2821557971014493" />
@@ -14,7 +20,9 @@
         <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/layout/activity_update.xml" value="0.2821557971014493" />
         <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/layout/event_table_row.xml" value="0.4288840262582057" />
         <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/layout/my_row.xml" value="0.4296875" />
-        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/layout/notification_layout.xml" value="0.1" />
+        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/layout/notification_layout.xml" value="0.335" />
+        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.179" />
+        <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/CS 360 Final Project/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.287" />
         <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/PanIQ Employee Database/app/src/main/res/layout/activity_add.xml" value="0.415625" />
         <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/PanIQ Employee Database/app/src/main/res/layout/activity_delete.xml" value="0.153125" />
         <entry key="..\:/Users/Lawrence/Git Repos/Android Studio Projects/Android-Builds/PanIQ Employee Database/app/src/main/res/layout/activity_home.xml" value="0.335" />

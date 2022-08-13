@@ -82,7 +82,26 @@
         android:layout_marginBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date_and_time_buttons" />
+        app:layout_constraintTop_toBottomOf="@+id/date_and_time_buttons"
+        android:enabled="false"
+        />
+
+
+    <Button
+        android:id="@+id/request_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="18dp"
+        android:backgroundTint="@color/sky"
+        android:text="@string/request_permissions"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        tools:ignore="SmallSp" />
 
 
 

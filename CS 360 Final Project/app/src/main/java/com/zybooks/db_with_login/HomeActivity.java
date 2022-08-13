@@ -32,19 +32,21 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        // build a recycler view to display events from db
         recyclerView = findViewById(R.id.recyclerview);
         add_button = findViewById(R.id.add_new);
 
+        // action button to add event
         add_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 Intent intent = new Intent(HomeActivity.this, AddActivity.class);
-                startActivityForResult(intent, REQUEST_CODE);
+                startActivityForResult(intent, REQUEST_CODE);       // deprecated use here
 
             }
         });
 
-
+        // create arrays to store db data
         myDB = new Main_DBHelper(HomeActivity.this);
         event_id = new ArrayList<>();
         event_title = new ArrayList<>();
@@ -52,7 +54,10 @@ public class HomeActivity extends AppCompatActivity {
         event_date = new ArrayList<>();
         event_time = new ArrayList<>();
 
+        // access db and get data to fill arrays
         storeDataInArrays();
+
+        // use the customAdaptor class to build each row
         customAdaptor = new CustomAdaptor(HomeActivity.this, this, event_id, event_title,
                 event_description, event_date, event_time);
         recyclerView.setAdapter(customAdaptor);
@@ -69,6 +74,7 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
+    // get data from db and create rows in recycler view for scroll
     void storeDataInArrays(){
         Cursor cursor = myDB.readAllData();
         if(cursor.getCount() == 0){
