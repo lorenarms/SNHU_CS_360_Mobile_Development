@@ -10,7 +10,7 @@
   The culmination of my learning can be found in the  <a href="https://github.com/lorenarms/SNHU_CS_360_Mobile_Development/tree/main/CS%20360%20Final%20Project" target="_blank">Final Project folder</a>. For more information about the project, see the 
   <a href="https://drive.google.com/file/d/1pFWvkUysmwF9FknGc0WO2ezPo8XFQTks/view?usp=sharing" target="_blank">requirements document</a>. 
   <h4>Final Project Images</h4>
-  <img src="https://github.com/lorenarms/SNHU_CS_360_Mobile_Development/blob/main/final_project_cs_360.png" atl="[picture of final project]" style="width:1280px;height:720px;">
+  <img src="https://github.com/lorenarms/SNHU_CS_360_Mobile_Development/blob/main/final_project_cs_360.png" atl="[picture of final project]" style="width:810px;height:333px;">
                                                                                                                                
   </p>
  <hr>
