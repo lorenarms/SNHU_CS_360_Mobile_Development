@@ -10,11 +10,11 @@
   The culmination of my learning can be found in the  <a href="https://github.com/lorenarms/SNHU_CS_360_Mobile_Development/tree/main/CS%20360%20Final%20Project" target="_blank">Final Project folder</a>. For more information about the project, see the 
   <a href="https://drive.google.com/file/d/1pFWvkUysmwF9FknGc0WO2ezPo8XFQTks/view?usp=sharing" target="_blank">requirements document</a>. 
   <h4>Final Project Images</h4>
-  <img src="https://drive.google.com/file/d/1tRpjfngmTnrtM6yvUZgU5G8AmTc88xkk/view?usp=sharing" atl="[picture of final project]" style="width:100px;height:100px;">
+  <img src="https://github.com/lorenarms/SNHU_CS_360_Mobile_Development/blob/main/final_project_cs_360.png" atl="[picture of final project]" style="width:1280px;height:720px;">
                                                                                                                                
   </p>
  <hr>
-  <p>If you're interested, you can see more about my process in <a href="https://youtu.be/MT1Gq8X0DtM" target="_blank">this video</a> about the final project, and for more details about the structure of the program, algorithms developed, and texture design, you can watch this <a href="https://youtu.be/lYsdwIlpkqA" target="_blank">much longer video</a>.
+  <p>Building this application had me exploring the world of app development from start to finish. In addition to researching other similar applications for what works and what does not, I needed to design my own app to fit around the specific requirements of the company that had "hired" me to develop for them. Once a design was settled on, I built the application in stages, starting with a simple basic log in feature and adding more features on a weekly basis. The project finished with a short description of a rollout plan for the application, focused on the best plan for releasing the app to market and potential ways to monetize the application.
   <hr>
   <p>
   You can also check out my entire <a href="https://www.youtube.com/channel/UCGtp8PRHgPCQHYoSxbMST8A" target="_blank">YouTube channel</a> for more videos about coding projects I've done.</p>
