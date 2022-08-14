@@ -13,6 +13,10 @@
   <img src="https://github.com/lorenarms/SNHU_CS_360_Mobile_Development/blob/main/final_project_cs_360.png" atl="[picture of final project]" style="width:810px;height:333px;">
                                                                                                                                
   </p>
+  <p>
+  You can also check out the <a href="https://github.com/lorenarms/SNHU_CS_360_Mobile_Development/blob/main/CS%20360%20Final%20Project/2-3%20Milestone%20-%20Goals%20and%20Users.docx.pdf" target="_blank">initial user requirements document</a> for my research in regards to meeting user needs, and the <a href="https://github.com/lorenarms/SNHU_CS_360_Mobile_Development/blob/main/CS%20360%20Final%20Project/3-3%20Project%20One%20-%20App%20Proposal.docx.pdf" target="_blank"> initial project proposal</a> to see what the original design was to be and how it changed as development progressed.
+  </p>
+  
  <hr>
   <p>Building this application had me exploring the world of app development from start to finish. In addition to researching other similar applications for what works and what does not, I needed to design my own app to fit around the specific requirements of the company that had "hired" me to develop for them. Once a design was settled on, I built the application in stages, starting with a simple basic log in feature and adding more features on a weekly basis. The project finished with a short description of a rollout plan for the application, focused on the best plan for releasing the app to market and potential ways to monetize the application.
   <hr>
