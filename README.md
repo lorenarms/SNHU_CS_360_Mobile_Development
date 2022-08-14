@@ -8,9 +8,9 @@
   During the class I developed a number of other applications in preparation for the final project. Some of these were created from various tutorials online, some were from the text, and some were of my own creation as practice. 
   
   The culmination of my learning can be found in the  <a href="https://github.com/lorenarms/SNHU_CS_360_Mobile_Development/tree/main/CS%20360%20Final%20Project" target="_blank">Final Project folder</a>. For more information about the project, see the 
-  <a href="https://github.com/lorenarms/SNHU_CS_330_Projects/tree/master/7-1 Final Project - A 3D Scene/Documentation" target="_blank">documentation</a>. Also check out my <a href="https://github.com/lorenarms/SNHU_CS_330_Projects/blob/master/7-1%20Final%20Project%20-%20A%203D%20Scene/Final%20Project%20Reflection.docx.pdf" target="_blank">summary report</a> of the project.<br>
-  <h4>Final Project Image</h4>
-  <img src="https://github.com/lorenarms/SNHU_CS_330_Projects/blob/master/7-1%20Final%20Project%20-%20A%203D%20Scene/final%20project.png?raw=true" atl="[picture of final project]" style="width:100px;height:100px;">
+  <a href="https://drive.google.com/file/d/1pFWvkUysmwF9FknGc0WO2ezPo8XFQTks/view?usp=sharing" target="_blank">requirements document</a>. 
+  <h4>Final Project Images</h4>
+  <img src="https://drive.google.com/file/d/1tRpjfngmTnrtM6yvUZgU5G8AmTc88xkk/view?usp=sharing" atl="[picture of final project]" style="width:100px;height:100px;">
                                                                                                                                
   </p>
  <hr>
