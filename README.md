@@ -27,8 +27,10 @@
   I've spent some time before this working through the development cycle, and one thing that I've realized is that it is rarely the case that user needs are completely spelled out for developers. In order to supplement this lack of information, I've personally found that researching a ton is really helpful. For this application project, I started off researching similar applications to help me see not only different approaches to solving the same problem, but also what seems to work best and what doesn't. I've had some experience with apps, but I tend to find an app I like and stick with it; I don't download new apps very often and so therefor my own experience is not reliable. Research was key to starting development here. Once I know what the app should do, then I start to think about how I'm going to make it work. It's kind of an outside to inside approach. I think this works well, especially because at this point I don't know that there's anything that can't be done with code. So if it can be imagined, it can be built!
   </p>
     <hr>
-  <p>
-  You can also check out my entire <a href="https://www.youtube.com/channel/UCGtp8PRHgPCQHYoSxbMST8A" target="_blank">YouTube channel</a> for more videos about coding projects I've done.</p>
-<p>Also, please check out my <a href="http://artllj.com" target="_blank">Personal Website</a> for more information about me, and my <a href="https://www.linkedin.com/in/lorenarms95/" target="_blank">LinkedIn</a> to get additional information. </p>
+<p>Check out my <a href="https://www.youtube.com/channel/UCGtp8PRHgPCQHYoSxbMST8A" target="_blank">YouTube channel</a> for more videos about coding projects I've done.</p>
+<p>Also, check out my <a href="http://artllj.com" target="_blank">Personal Website</a> for more information about me, and my <a href="https://www.linkedin.com/in/lorenarms95/" target="_blank">LinkedIn</a> to see if I'd be a good fit for your team. </p>
 <h3>Thanks for stopping by!</h3>
-<img src="https://media-exp2.licdn.com/dms/image/C5603AQEqU5vuSjmWrg/profile-displayphoto-shrink_400_400/0/1641574403621?e=1660780800&v=beta&t=hukMeE3aKt4d6lyocOdHmZmJ16QC0bWLUaaT2d_m5Gk" atl="[picture of me]" style="width:100px;height:100px;">
+<img src="https://github.com/lorenarms/SNHU_CS_370_Emerging_Trends_in_CS/blob/main/images/profile.png" atl="[picture of me]" style="width:100px;">
+<p>much love
+-L
+</p>
